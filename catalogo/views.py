@@ -9,4 +9,10 @@ def indice(request):
     '''
     libros = Book.objects.all()
     datos = {'autor': 'Rares', 'libros':libros}
+   
     return render(request, 'index.html', context=datos)
+
+def contacto(request):
+    contacto = {'nombre': 'Rares Mogojan', 'email': 'correo@contacto.com', 'telefono': '976521308'} 
+
+    return render(request, 'contacto.html', context=contacto)
