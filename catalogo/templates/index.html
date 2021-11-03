@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}<title>Mi superbiblio</title>{% endblock %}
+{% block content %}
+    <h1>Indice de mi catalago</h1>
+    {{autor}}
+    <h2 class="mt-4">Ultimos libros</h2>
+    <ul>
+    {% for libro in libros %}
+        <li>{{libro.title}} 
+        {%if libro.author %}
+            ({{libro.author.first_name}} {{ libro.author.last_name}})
+        {% endif %}    
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}    
