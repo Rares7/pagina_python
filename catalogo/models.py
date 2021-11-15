@@ -1,4 +1,5 @@
 from django.db import models
+from django.views import generic
 
 # Create your models here.
 class Genre(models.Model):
@@ -34,3 +35,6 @@ class Book(models.Model):
         """
         return ', '.join([ genre.name for genre in self.genre.all()[:2] ])
     display_genre.short_description = 'Genre'
+
+class BookListView(generic.ListView):
+    model = Book
